@@ -1,0 +1,15 @@
+[package]
+name = "lidar_clustering_hdl"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rhdl = { git = "https://github.com/samitbasu/rhdl" }
+rhdl-core = { git = "https://github.com/samitbasu/rhdl" }
+
+[dev-dependencies]
+criterion = "0.5"
+
+[[bench]]
+name = "clustering_bench"
+harness = false
