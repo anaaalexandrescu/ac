@@ -1,8 +1,5 @@
-// src/ece.rs
 use rhdl::prelude::*;
-use crate::{Point3D, PointState};
-
-pub const MAX_POINTS: usize = 256;
+use crate::{Point3D, PointState, distance_squared};
 
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub enum EceState {
@@ -22,7 +19,6 @@ pub struct EceCore {
     pub current_cluster: Bits<8>,
     pub state: EceState,
     pub seed_point: Point3D,
-    pub scan_idx: Bits<8>,
 }
 
 impl EceCore {
@@ -32,7 +28,6 @@ impl EceCore {
             current_cluster: bits(0),
             state: EceState::Idle,
             seed_point: Point3D::invalid(),
-            scan_idx: bits(0),
         }
     }
 }
@@ -40,26 +35,41 @@ impl EceCore {
 #[kernel]
 pub fn ece_step(
     core: EceCore,
-    input_point: Point3D,
-    input_state: PointState,
+    p: Point3D,
+    ps: PointState,
 ) -> (EceCore, PointState) {
-    if core.state == EceState::Idle {
-        if input_point.valid && (input_state == PointState::Unvisited) {
-            (
-                EceCore {
-                    threshold_sq: core.threshold_sq,
-                    current_cluster: core.current_cluster,
-                    state: EceState::Growing,
-                    seed_point: input_point,
-                    scan_idx: bits(0),
-                },
-                PointState::Clustered(core.current_cluster),
-            )
-        } else {
-            (core, input_state)
+
+    match core.state {
+        // prima dată → seed
+        EceState::Idle => {
+            if p.valid && ps == PointState::Unvisited {
+                (
+                    EceCore {
+                        threshold_sq: core.threshold_sq,
+                        current_cluster: core.current_cluster,
+                        state: EceState::Growing,
+                        seed_point: p,
+                    },
+                    PointState::Clustered(core.current_cluster),
+                )
+            } else {
+                (core, ps)
+            }
         }
-    } else {
-        // Growing inca nu e implementat complet; pastram starea.
-        (core, input_state)
+
+        // punctele apropiate de seed sunt marcate în același cluster
+        EceState::Growing => {
+            if p.valid && ps == PointState::Unvisited {
+                let dist = distance_squared(core.seed_point, p);
+
+                if dist <= core.threshold_sq {
+                    (core, PointState::Clustered(core.current_cluster))
+                } else {
+                    (core, ps)
+                }
+            } else {
+                (core, ps)
+            }
+        }
     }
 }

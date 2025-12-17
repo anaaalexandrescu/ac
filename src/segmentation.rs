@@ -1,10 +1,8 @@
 // src/segmentation.rs
 use rhdl::prelude::*;
-use crate::{
-    Point3D, PointState,
-    EceCore, ece_step,
-    DbscanCore, dbscan_step,
-};
+use crate::{Point3D, PointState};
+use crate::ece::{EceCore, ece_step};
+use crate::dbscan::{DbscanCore, dbscan_step};
 
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub enum SegmentationMode {
