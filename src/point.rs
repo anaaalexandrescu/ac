@@ -1,6 +1,7 @@
+// src/point.rs
 use rhdl::prelude::*;
 
-#[derive(Copy, Clone, PartialEq, Digital, Default, Debug)]  
+#[derive(Copy, Clone, PartialEq, Digital, Default, Debug)]
 pub struct Point3D {
     pub x: Bits<16>,
     pub y: Bits<16>,
@@ -23,7 +24,7 @@ impl Point3D {
     }
 }
 
-#[derive(Copy, Clone, PartialEq, Digital, Debug)]  
+#[derive(Copy, Clone, PartialEq, Digital, Debug)]
 pub enum PointState {
     Unvisited,
     Visited,

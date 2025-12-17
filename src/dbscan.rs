@@ -1,3 +1,4 @@
+// src/dbscan.rs
 use rhdl::prelude::*;
 use crate::{Point3D, PointState, distance_squared, is_within_threshold};
 
@@ -61,7 +62,7 @@ pub fn dbscan_step(
                         neighbor_count: bits(0),
                         seed_point: input_point,
                     },
-                    input_state
+                    input_state,
                 )
             } else {
                 (core, input_state)
@@ -77,7 +78,7 @@ pub fn dbscan_step(
             };
 
             let next_idx = core.scan_idx + bits(1);
-            
+
             if next_idx == bits((MAX_POINTS - 1) as u128) {
                 (
                     DbscanCore {
@@ -89,7 +90,7 @@ pub fn dbscan_step(
                         neighbor_count: new_count,
                         seed_point: core.seed_point,
                     },
-                    input_state
+                    input_state,
                 )
             } else {
                 (
@@ -102,7 +103,7 @@ pub fn dbscan_step(
                         neighbor_count: new_count,
                         seed_point: core.seed_point,
                     },
-                    input_state
+                    input_state,
                 )
             }
         }
@@ -124,7 +125,7 @@ pub fn dbscan_step(
                     neighbor_count: core.neighbor_count,
                     seed_point: core.seed_point,
                 },
-                new_state
+                new_state,
             )
         }
 

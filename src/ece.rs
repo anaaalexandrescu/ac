@@ -1,3 +1,4 @@
+// src/ece.rs
 use rhdl::prelude::*;
 use crate::{Point3D, PointState};
 
@@ -52,12 +53,13 @@ pub fn ece_step(
                     seed_point: input_point,
                     scan_idx: bits(0),
                 },
-                PointState::Clustered(core.current_cluster)
+                PointState::Clustered(core.current_cluster),
             )
         } else {
             (core, input_state)
         }
     } else {
+        // Growing inca nu e implementat complet; pastram starea.
         (core, input_state)
     }
 }

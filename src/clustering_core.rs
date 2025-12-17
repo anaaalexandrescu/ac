@@ -1,3 +1,4 @@
+// src/clustering_core.rs
 use rhdl::prelude::*;
 use crate::{Point3D, PointState, distance_squared, is_within_threshold};
 
@@ -51,13 +52,13 @@ pub fn process_point(
                         state: ClusteringState::GrowingRegion,
                     },
                     PointState::Clustered(core.current_cluster_id),
-                    true
+                    true,
                 )
             } else {
                 (core, point_state, false)
             }
         }
-        
+
         ClusteringState::GrowingRegion => {
             if (point_state == PointState::Unvisited) && input_point.valid {
                 let dist_sq = distance_squared(core.seed_point, input_point);
@@ -70,7 +71,7 @@ pub fn process_point(
                 (core, point_state, false)
             }
         }
-        
-        _ => (core, point_state, false)
+
+        _ => (core, point_state, false),
     }
 }

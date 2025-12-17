@@ -1,24 +1,25 @@
+// src/distance.rs
 use rhdl::prelude::*;
+
 use crate::Point3D;
 
+// Calculeaza distanta patrata intre doua puncte.
+// Folosim 32 de biti pentru a evita overflow la inmultire.
 #[kernel]
 pub fn distance_squared(p1: Point3D, p2: Point3D) -> Bits<32> {
-    if !p1.valid || !p2.valid {
-        return bits::<32>(0xFFFFFFFF);
-    }
+    let dx: Bits<32> = (p1.x.resize::<32>() - p2.x.resize::<32>()).resize();
+    let dy: Bits<32> = (p1.y.resize::<32>() - p2.y.resize::<32>()).resize();
+    let dz: Bits<32> = (p1.z.resize::<32>() - p2.z.resize::<32>()).resize();
 
-    let dx: Bits<16> = if p1.x > p2.x { p1.x - p2.x } else { p2.x - p1.x };
-    let dy: Bits<16> = if p1.y > p2.y { p1.y - p2.y } else { p2.y - p1.y };
-    let dz: Bits<16> = if p1.z > p2.z { p1.z - p2.z } else { p2.z - p1.z };
+    let dx2: Bits<32> = dx * dx;
+    let dy2: Bits<32> = dy * dy;
+    let dz2: Bits<32> = dz * dz;
 
-    let dx32: Bits<32> = bits(dx.raw() as u128);
-    let dy32: Bits<32> = bits(dy.raw() as u128);
-    let dz32: Bits<32> = bits(dz.raw() as u128);
-
-    (dx32 * dx32) + (dy32 * dy32) + (dz32 * dz32)
+    dx2 + dy2 + dz2
 }
 
+// Compara distanta cu un prag (epsilon^2 / threshold^2)
 #[kernel]
-pub fn is_within_threshold(dist_sq: Bits<32>, eps_sq: Bits<32>) -> bool {
-    dist_sq <= eps_sq
+pub fn is_within_threshold(dist_sq: Bits<32>, threshold_sq: Bits<32>) -> bool {
+    dist_sq <= threshold_sq
 }
