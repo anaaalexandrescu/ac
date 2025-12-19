@@ -1,6 +1,9 @@
 // src/clustering_core.rs
 use rhdl::prelude::*;
-use crate::{Point3D, PointState, distance_squared, is_within_threshold};
+use crate::{Point3D, PointState};
+use crate::distance::{distance_squared, is_within_threshold};
+
+// Restul fișierului rămâne la fel
 
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub struct ClusteringCore {
@@ -13,9 +16,7 @@ pub struct ClusteringCore {
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub enum ClusteringState {
     Idle,
-    FindingSeed,
     GrowingRegion,
-    Done,
 }
 
 impl Default for ClusteringState {
@@ -33,6 +34,15 @@ impl ClusteringCore {
             state: ClusteringState::Idle,
         }
     }
+    
+    pub fn next_cluster(&self) -> Self {
+        Self {
+            threshold_sq: self.threshold_sq,
+            current_cluster_id: self.current_cluster_id + bits(1),
+            seed_point: Point3D::invalid(),
+            state: ClusteringState::Idle,
+        }
+    }
 }
 
 #[kernel]
@@ -40,7 +50,8 @@ pub fn process_point(
     core: ClusteringCore,
     input_point: Point3D,
     point_state: PointState,
-) -> (ClusteringCore, PointState, bool) {
+) -> (ClusteringCore, PointState, bool) {  // bool = punct modificat
+    
     match core.state {
         ClusteringState::Idle => {
             if (point_state == PointState::Unvisited) && input_point.valid {
@@ -71,7 +82,5 @@ pub fn process_point(
                 (core, point_state, false)
             }
         }
-
-        _ => (core, point_state, false),
     }
 }

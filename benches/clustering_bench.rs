@@ -1,119 +1,70 @@
-// benches/clustering_bench.rs
-use criterion::{black_box, criterion_group, criterion_main, Criterion, BenchmarkId};
+use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use lidar_clustering_hdl::*;
 use rhdl::prelude::*;
 
-fn benchmark_ece(c: &mut Criterion) {
-    let mut group = c.benchmark_group("ECE Point Cloud Segmentation");
+fn test_ece_performance(c: &mut Criterion) {
+    c.bench_function("ece_100_points", |b| {
+        let points = make_test_points(100);
+        let threshold = bits(225);
 
-    for size in [100, 500, 1000, 2000].iter() {
-        group.bench_with_input(BenchmarkId::from_parameter(size), size, |b, &size| {
-            let points = generate_points(size);
-            let threshold_sq = bits(200);
+        b.iter(|| {
+            let mut core = EceCore::new(threshold);
+            let mut states = vec![PointState::Unvisited; 100];
 
-            b.iter(|| {
-                let mut ece_core = EceCore::new(threshold_sq);
-                let mut states = vec![PointState::Unvisited; points.len()];
-
-                for (i, point) in points.iter().enumerate() {
-                    let (new_core, new_state) =
-                        ece_step(black_box(ece_core), black_box(*point), black_box(states[i]));
-                    ece_core = new_core;
-                    states[i] = new_state;
-                }
-                states
-            });
+            for i in 0..points.len() {
+                let (new_core, new_state, _) = ece_step(core, points[i], states[i]);
+                core = new_core;
+                states[i] = new_state;
+            }
         });
-    }
-
-    group.finish();
-}
-
-fn benchmark_dbscan(c: &mut Criterion) {
-    let mut group = c.benchmark_group("DBSCAN Point Cloud Segmentation");
-
-    for size in [100, 500, 1000, 2000].iter() {
-        group.bench_with_input(BenchmarkId::from_parameter(size), size, |b, &size| {
-            let points = generate_points(size);
-            let epsilon_sq = bits(200);
-            let min_pts = bits(3);
-
-            b.iter(|| {
-                let mut dbscan_core = DbscanCore::new(epsilon_sq, min_pts);
-                let mut states = vec![PointState::Unvisited; points.len()];
-
-                for (i, point) in points.iter().enumerate() {
-                    let (new_core, new_state) = dbscan_step(
-                        black_box(dbscan_core),
-                        black_box(*point),
-                        black_box(states[i]),
-                    );
-                    dbscan_core = new_core;
-                    states[i] = new_state;
-                }
-                states
-            });
-        });
-    }
-
-    group.finish();
-}
-
-fn benchmark_distance(c: &mut Criterion) {
-    c.bench_function("distance_squared", |b| {
-        let p1 = Point3D::new(bits(100), bits(200), bits(50));
-        let p2 = Point3D::new(bits(150), bits(250), bits(75));
-
-        b.iter(|| distance_squared(black_box(p1), black_box(p2)));
     });
 }
 
-fn benchmark_clustering_core(c: &mut Criterion) {
-    let mut group = c.benchmark_group("Clustering Core");
+fn test_dbscan_performance(c: &mut Criterion) {
+    c.bench_function("dbscan_100_points", |b| {
+        let points = make_test_points(100);
+        let epsilon = bits(225);
+        let min_pts = bits(3);
 
-    for size in [100, 500, 1000].iter() {
-        group.bench_with_input(BenchmarkId::from_parameter(size), size, |b, &size| {
-            let points = generate_points(size);
-            let threshold_sq = bits(200);
+        b.iter(|| {
+            let mut core = DbscanCore::new(epsilon, min_pts);
+            let mut states = vec![PointState::Unvisited; 100];
 
-            b.iter(|| {
-                let mut core = ClusteringCore::new(threshold_sq);
-                let mut states = vec![PointState::Unvisited; points.len()];
-
-                for (i, point) in points.iter().enumerate() {
-                    let (new_core, new_state, _) = process_point(
-                        black_box(core),
-                        black_box(*point),
-                        black_box(states[i]),
-                    );
-                    core = new_core;
-                    states[i] = new_state;
-                }
-                states
-            });
+            for i in 0..points.len() {
+                let (new_core, new_state, _) = dbscan_step(core, points[i], states[i]);
+                core = new_core;
+                states[i] = new_state;
+            }
         });
-    }
-
-    group.finish();
+    });
 }
 
-fn generate_points(n: usize) -> Vec<Point3D> {
-    (0..n)
-        .map(|i| {
-            Point3D::new(
-                bits((i * 7 % 1000) as u128),
-                bits((i * 13 % 1000) as u128),
-                bits((i * 3 % 500) as u128),
-            )
-        })
-        .collect()
+fn test_distance_calculation(c: &mut Criterion) {
+    c.bench_function("calculate_distance", |b| {
+        let point1 = Point3D::new(bits(100), bits(200), bits(50));
+        let point2 = Point3D::new(bits(150), bits(250), bits(75));
+
+        b.iter(|| {
+            distance_squared(black_box(point1), black_box(point2))
+        });
+    });
+}
+
+fn make_test_points(n: usize) -> Vec<Point3D> {
+    let mut points = Vec::new();
+    for i in 0..n {
+        let x = (i * 7 % 1000) as u128;
+        let y = (i * 13 % 1000) as u128;
+        let z = (i * 3 % 500) as u128;
+        points.push(Point3D::new(bits(x), bits(y), bits(z)));
+    }
+    points
 }
 
 criterion_group!(
     benches,
-    benchmark_ece,
-    benchmark_dbscan,
-    benchmark_distance,
-    benchmark_clustering_core
+    test_ece_performance,
+    test_dbscan_performance,
+    test_distance_calculation
 );
 criterion_main!(benches);

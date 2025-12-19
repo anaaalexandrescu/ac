@@ -1,10 +1,13 @@
+// src/dbscan.rs
 use rhdl::prelude::*;
-use crate::{Point3D, PointState, distance_squared};
+use crate::{Point3D, PointState};
+use crate::distance::distance_squared;
 
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub enum DbscanState {
     Idle,
-    Scanning,
+    CountingNeighbors,
+    Expanding,
 }
 
 impl Default for DbscanState {
@@ -20,6 +23,7 @@ pub struct DbscanCore {
     pub current_cluster: Bits<8>,
     pub state: DbscanState,
     pub seed_point: Point3D,
+    pub neighbor_count: Bits<8>,
 }
 
 impl DbscanCore {
@@ -29,7 +33,29 @@ impl DbscanCore {
             min_pts,
             current_cluster: bits(0),
             state: DbscanState::Idle,
-            seed_point: Point3D::invalid(),
+            seed_point: Point3D {
+                x: bits(0),
+                y: bits(0),
+                z: bits(0),
+                valid: false,
+            },
+            neighbor_count: bits(0),
+        }
+    }
+    
+    pub fn next_cluster(&self) -> Self {
+        Self {
+            epsilon_sq: self.epsilon_sq,
+            min_pts: self.min_pts,
+            current_cluster: self.current_cluster + bits(1),
+            state: DbscanState::Idle,
+            seed_point: Point3D {
+                x: bits(0),
+                y: bits(0),
+                z: bits(0),
+                valid: false,
+            },
+            neighbor_count: bits(0),
         }
     }
 }
@@ -39,43 +65,128 @@ pub fn dbscan_step(
     core: DbscanCore,
     p: Point3D,
     ps: PointState,
-) -> (DbscanCore, PointState) {
+) -> (DbscanCore, PointState, bool) {
 
     match core.state {
-        // primul punct → seed
         DbscanState::Idle => {
             if ps == PointState::Unvisited && p.valid {
+                // Găsit seed - marchează ca vizitat și numără vecini
                 (
                     DbscanCore {
                         epsilon_sq: core.epsilon_sq,
                         min_pts: core.min_pts,
                         current_cluster: core.current_cluster,
-                        state: DbscanState::Scanning,
+                        state: DbscanState::CountingNeighbors,
                         seed_point: p,
+                        neighbor_count: bits(1), // Seed se numără pe sine
                     },
-                    PointState::Clustered(core.current_cluster),
+                    PointState::Visited,
+                    true,
                 )
             } else {
-                (core, ps)
+                (core, ps, false)
             }
         }
 
-        // punctele apropiate seed-ului → intră în cluster
-        DbscanState::Scanning => {
-            if ps == PointState::Unvisited && p.valid {
+        DbscanState::CountingNeighbors => {
+            // Numără vecinii seed-ului
+            if p.valid && p != core.seed_point {
                 let d = distance_squared(core.seed_point, p);
-
+                
                 if d <= core.epsilon_sq {
                     (
-                        core,
-                        PointState::Clustered(core.current_cluster),
+                        DbscanCore {
+                            epsilon_sq: core.epsilon_sq,
+                            min_pts: core.min_pts,
+                            current_cluster: core.current_cluster,
+                            state: core.state,
+                            seed_point: core.seed_point,
+                            neighbor_count: core.neighbor_count + bits(1),
+                        },
+                        ps,
+                        false,
                     )
                 } else {
-                    (core, ps)
+                    (core, ps, false)
                 }
             } else {
-                (core, ps)
+                (core, ps, false)
             }
         }
+
+        DbscanState::Expanding => {
+            // Nu mai face nimic aici - expansiunea se face cu dbscan_expand
+            (core, ps, false)
+        }
+    }
+}
+
+// Kernel pentru region growing DBSCAN
+#[kernel]
+pub fn dbscan_expand(
+    epsilon_sq: Bits<32>,
+    current_cluster: Bits<8>,
+    test_point: Point3D,
+    test_state: PointState,
+    reference_point: Point3D,
+    reference_state: PointState,
+) -> (PointState, bool) {
+    
+    // Reference trebuie să fie în cluster curent
+    let ref_in_cluster = match reference_state {
+        PointState::Clustered(id) => id == current_cluster,
+        _ => false,
+    };
+    
+    // Test trebuie să fie unvisited
+    let can_expand = test_point.valid 
+                     && test_state == PointState::Unvisited
+                     && reference_point.valid
+                     && ref_in_cluster;
+    
+    if can_expand {
+        let dist = distance_squared(test_point, reference_point);
+        
+        if dist <= epsilon_sq {
+            (PointState::Clustered(current_cluster), true)
+        } else {
+            (test_state, false)
+        }
+    } else {
+        (test_state, false)
+    }
+}
+
+#[kernel]
+pub fn has_min_neighbors(core: DbscanCore) -> bool {
+    core.neighbor_count >= core.min_pts
+}
+
+#[kernel]
+pub fn start_expanding(core: DbscanCore) -> DbscanCore {
+    DbscanCore {
+        epsilon_sq: core.epsilon_sq,
+        min_pts: core.min_pts,
+        current_cluster: core.current_cluster,
+        state: DbscanState::Expanding,
+        seed_point: core.seed_point,
+        neighbor_count: core.neighbor_count,
+    }
+}
+
+#[kernel]
+pub fn mark_seed_as_noise(core: DbscanCore) -> DbscanCore {
+    DbscanCore {
+        epsilon_sq: core.epsilon_sq,
+        min_pts: core.min_pts,
+        current_cluster: core.current_cluster,
+        state: DbscanState::Idle,
+        seed_point: Point3D {
+            x: bits(0),
+            y: bits(0),
+            z: bits(0),
+            valid: false,
+        },
+        neighbor_count: bits(0),
     }
 }

@@ -46,10 +46,10 @@ pub fn segmentation_step(
     core: SegmentationCore,
     input_point: Point3D,
     input_state: PointState,
-) -> (SegmentationCore, PointState) {
+) -> (SegmentationCore, PointState, bool) {  // Adăugat bool
     match core.mode {
         SegmentationMode::Ece => {
-            let (new_ece, new_state) = ece_step(core.ece_core, input_point, input_state);
+            let (new_ece, new_state, modified) = ece_step(core.ece_core, input_point, input_state);
             (
                 SegmentationCore {
                     mode: core.mode,
@@ -57,10 +57,11 @@ pub fn segmentation_step(
                     dbscan_core: core.dbscan_core,
                 },
                 new_state,
+                modified,  // Propagă bool-ul
             )
         }
         SegmentationMode::Dbscan => {
-            let (new_dbscan, new_state) = dbscan_step(core.dbscan_core, input_point, input_state);
+            let (new_dbscan, new_state, modified) = dbscan_step(core.dbscan_core, input_point, input_state);
             (
                 SegmentationCore {
                     mode: core.mode,
@@ -68,6 +69,7 @@ pub fn segmentation_step(
                     dbscan_core: new_dbscan,
                 },
                 new_state,
+                modified,  // Propagă bool-ul
             )
         }
     }
