@@ -12,16 +12,17 @@ use point::{Point3D, PointState};
 use segmentation::{SegmentationCore, segmentation_step};
 
 fn main() {
-    println!("=== Test ECE Clustering ===\n");
+    //test ECE clustering
     test_ece_clustering();
     
-    println!("\n=== Test DBSCAN Clustering ===\n");
+    //test DBSCAN clustering
     test_dbscan_clustering();
 }
 
 fn test_ece_clustering() {
     let points = generate_test_data();
     let mut states = vec![PointState::Unvisited; points.len()];
+    let min_cluster_points = 2;
     
     println!("Total puncte: {}", points.len());
     
@@ -37,7 +38,7 @@ fn test_ece_clustering() {
     let max_clusters = 10;
     
     while cluster_count < max_clusters {
-        // Găsește seed pentru cluster nou
+        // gaseste seed pentru cluster nou
         let mut seed_found = false;
         for i in 0..points.len() {
             let (new_core, new_state, modified) = 
@@ -48,28 +49,28 @@ fn test_ece_clustering() {
             if modified && new_state != states[i] {
                 states[i] = new_state;
                 seed_found = true;
-                println!("→ Seed găsit pentru cluster {}: punct {}", cluster_count, i);
+                println!("Seed gasit pentru cluster {}: punct {}", cluster_count, i);
                 break;
             }
         }
         
         if !seed_found {
-            println!("✓ Nu mai sunt puncte nevizitate!");
+            println!("Nu mai sunt puncte nevizitate!");
             break;
         }
         
-        // Region growing: repetă până nu mai sunt modificări
+        // repeta pana nu mai sunt modificari
         let max_expansion_passes = 20;
         for pass in 0..max_expansion_passes {
             let mut modified_count = 0;
             
-            // Pentru fiecare punct nevizitat
+            // pt fiecare punct nevizitat
             for i in 0..points.len() {
                 if !points[i].valid || states[i] != PointState::Unvisited {
                     continue;
                 }
                 
-                // Compară cu TOATE punctele deja clusterizate
+                // compara cu toate punctele deja clusterizate
                 for j in 0..points.len() {
                     if i == j || !points[j].valid {
                         continue;
@@ -87,20 +88,40 @@ fn test_ece_clustering() {
                     if modified && new_state != states[i] {
                         states[i] = new_state;
                         modified_count += 1;
-                        break; // Punct adăugat, treci la următorul
+                        break; // punct adaugat, treci la următorul
                     }
                 }
             }
             
-            println!("  Pass {}: {} puncte adăugate", pass, modified_count);
+            println!("  Pass {}: {} puncte adaugate", pass, modified_count);
             
             if modified_count == 0 {
-                println!("  ✓ Cluster {} complet", cluster_count);
+                // finalize cluster: if too small, mark as noise
+                let mut current_size = 0;
+                for state in states.iter() {
+                    if let PointState::Clustered(id) = state {
+                        if *id == core.ece_core.current_cluster {
+                            current_size += 1;
+                        }
+                    }
+                }
+
+                if current_size < min_cluster_points {
+                    for state in states.iter_mut() {
+                        if let PointState::Clustered(id) = state {
+                            if *id == core.ece_core.current_cluster {
+                                *state = PointState::Noise;
+                            }
+                        }
+                    }
+                    println!("Cluster {} prea mic ({}) -> marcat ca noise", cluster_count, current_size);
+                } else {
+                    println!("Cluster {} complet ({} puncte)", cluster_count, current_size);
+                }
                 break;
             }
         }
         
-        // Următorul cluster
         core.ece_core = core.ece_core.next_cluster();
         cluster_count += 1;
     }
@@ -127,7 +148,6 @@ fn test_dbscan_clustering() {
     let max_clusters = 10;
     
     while cluster_count < max_clusters {
-        // Găsește seed
         let mut seed_idx = None;
         for i in 0..points.len() {
             let (new_core, new_state, modified) = 
@@ -143,11 +163,11 @@ fn test_dbscan_clustering() {
         }
         
         if seed_idx.is_none() {
-            println!("✓ Nu mai sunt puncte nevizitate!");
+            println!("Nu mai sunt puncte nevizitate!");
             break;
         }
         
-        // Numără vecinii seed-ului
+        // numara vecinii seed-ului
         for i in 0..points.len() {
             if i == seed_idx.unwrap() || !points[i].valid {
                 continue;
@@ -158,12 +178,11 @@ fn test_dbscan_clustering() {
             core = new_core;
         }
         
-        // Verifică dacă seed are suficienți vecini
+        // verifica daca seed are suficienti vecini
         let has_enough = dbscan::has_min_neighbors(core.dbscan_core);
         
         if !has_enough {
-            // Seed e noise
-            println!("→ Seed {} e noise (doar {} vecini)", 
+            println!("Seed {} e noise (doar {} vecini)", 
                 seed_idx.unwrap(), 
                 core.dbscan_core.neighbor_count.0
             );
@@ -173,8 +192,7 @@ fn test_dbscan_clustering() {
             continue;
         }
         
-        // Seed e core point - marchează ca clustered și expandează
-        println!("→ Seed {} pentru cluster {} (cu {} vecini)", 
+        println!("Seed {} pentru cluster {} (cu {} vecini)", 
             seed_idx.unwrap(),
             cluster_count,
             core.dbscan_core.neighbor_count.0
@@ -183,18 +201,17 @@ fn test_dbscan_clustering() {
         states[seed_idx.unwrap()] = PointState::Clustered(core.dbscan_core.current_cluster);
         core.dbscan_core = dbscan::start_expanding(core.dbscan_core);
         
-        // Region growing
         let max_expansion_passes = 20;
         for pass in 0..max_expansion_passes {
             let mut modified_count = 0;
             
-            // Pentru fiecare punct nevizitat
+            // pt fiecare punct nevizitat
             for i in 0..points.len() {
                 if !points[i].valid || states[i] != PointState::Unvisited {
                     continue;
                 }
                 
-                // Compară cu TOATE punctele din cluster
+                // compara cu toate punctele din cluster
                 for j in 0..points.len() {
                     if i == j || !points[j].valid {
                         continue;
@@ -217,15 +234,14 @@ fn test_dbscan_clustering() {
                 }
             }
             
-            println!("  Pass {}: {} puncte adăugate", pass, modified_count);
+            println!("Pass {}: {} puncte adăugate", pass, modified_count);
             
             if modified_count == 0 {
-                println!("  ✓ Cluster {} complet", cluster_count);
+                println!("Cluster {} complet", cluster_count);
                 break;
             }
         }
         
-        // Următorul cluster
         core.dbscan_core = core.dbscan_core.next_cluster();
         cluster_count += 1;
     }
@@ -236,7 +252,7 @@ fn test_dbscan_clustering() {
 fn generate_test_data() -> Vec<Point3D> {
     let mut points = Vec::new();
     
-    // Cluster 1: centrat la (20, 20, 20)
+    // cluster 1: centrat la (20, 20, 20)
     for i in 0..15 {
         let x = 20 + (i % 5) * 4;
         let y = 20 + (i / 5) * 4;
@@ -247,7 +263,7 @@ fn generate_test_data() -> Vec<Point3D> {
         ));
     }
     
-    // Cluster 2: centrat la (100, 100, 50)
+    // cluster 2: centrat la (100, 100, 50)
     for i in 0..18 {
         let x = 100 + (i % 6) * 4;
         let y = 100 + (i / 6) * 4;
@@ -258,7 +274,7 @@ fn generate_test_data() -> Vec<Point3D> {
         ));
     }
     
-    // Cluster 3: centrat la (200, 50, 100)
+    // cluster 3: centrat la (200, 50, 100)
     for i in 0..12 {
         let x = 200 + (i % 4) * 3;
         let y = 50 + (i / 4) * 3;
@@ -269,7 +285,7 @@ fn generate_test_data() -> Vec<Point3D> {
         ));
     }
     
-    // Zgomot
+    // zgomot
     points.push(Point3D::new(bits(500), bits(500), bits(500)));
     points.push(Point3D::new(bits(50), bits(300), bits(200)));
     points.push(Point3D::new(bits(400), bits(20), bits(300)));
@@ -278,8 +294,7 @@ fn generate_test_data() -> Vec<Point3D> {
 }
 
 fn print_results(points: &[Point3D], states: &[PointState]) {
-    println!("\n=== Rezultate ===");
-    
+    //rezultate
     let mut clusters = std::collections::HashMap::new();
     let mut noise = 0;
     let mut unvisited = 0;
@@ -305,7 +320,7 @@ fn print_results(points: &[Point3D], states: &[PointState]) {
     cluster_ids.sort();
     
     for id in cluster_ids {
-        println!("  Cluster {}: {} puncte", id, clusters[id]);
+        println!("Cluster {}: {} puncte", id, clusters[id]);
     }
     
     println!("  Noise: {}", noise);

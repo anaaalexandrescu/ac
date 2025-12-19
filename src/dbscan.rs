@@ -70,7 +70,7 @@ pub fn dbscan_step(
     match core.state {
         DbscanState::Idle => {
             if ps == PointState::Unvisited && p.valid {
-                // Găsit seed - marchează ca vizitat și numără vecini
+                // gasit seed - marcheaza ca vizitat si numara vecini
                 (
                     DbscanCore {
                         epsilon_sq: core.epsilon_sq,
@@ -78,7 +78,7 @@ pub fn dbscan_step(
                         current_cluster: core.current_cluster,
                         state: DbscanState::CountingNeighbors,
                         seed_point: p,
-                        neighbor_count: bits(1), // Seed se numără pe sine
+                        neighbor_count: bits(1), // seed se numara pe sine
                     },
                     PointState::Visited,
                     true,
@@ -89,7 +89,7 @@ pub fn dbscan_step(
         }
 
         DbscanState::CountingNeighbors => {
-            // Numără vecinii seed-ului
+            // numara vecinii seed-ului
             if p.valid && p != core.seed_point {
                 let d = distance_squared(core.seed_point, p);
                 
@@ -115,13 +115,11 @@ pub fn dbscan_step(
         }
 
         DbscanState::Expanding => {
-            // Nu mai face nimic aici - expansiunea se face cu dbscan_expand
             (core, ps, false)
         }
     }
 }
 
-// Kernel pentru region growing DBSCAN
 #[kernel]
 pub fn dbscan_expand(
     epsilon_sq: Bits<32>,
@@ -132,13 +130,11 @@ pub fn dbscan_expand(
     reference_state: PointState,
 ) -> (PointState, bool) {
     
-    // Reference trebuie să fie în cluster curent
     let ref_in_cluster = match reference_state {
         PointState::Clustered(id) => id == current_cluster,
         _ => false,
     };
     
-    // Test trebuie să fie unvisited
     let can_expand = test_point.valid 
                      && test_state == PointState::Unvisited
                      && reference_point.valid

@@ -3,8 +3,6 @@ use rhdl::prelude::*;
 use crate::{Point3D, PointState};
 use crate::distance::{distance_squared, is_within_threshold};
 
-// Restul fișierului rămâne la fel
-
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub struct ClusteringCore {
     pub threshold_sq: Bits<32>,

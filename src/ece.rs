@@ -5,8 +5,8 @@ use crate::distance::distance_squared;
 
 #[derive(Copy, Clone, PartialEq, Digital)]
 pub enum EceState {
-    Idle,           // caută seed nou
-    Growing,        // crește cluster-ul curent
+    Idle,           // cauta seed nou
+    Growing,        // creste cluster-ul curent
 }
 
 impl Default for EceState {
@@ -53,7 +53,7 @@ impl EceCore {
     }
 }
 
-// Kernel principal - găsește seed
+// kernel principal - gaseste seed
 #[kernel]
 pub fn ece_step(
     core: EceCore,
@@ -63,7 +63,7 @@ pub fn ece_step(
     match core.state {
         EceState::Idle => {
             if p.valid && ps == PointState::Unvisited {
-                // Am găsit seed - treci la Growing
+                // seed gasit -> treci la Growing
                 (
                     EceCore {
                         threshold_sq: core.threshold_sq,
@@ -80,13 +80,12 @@ pub fn ece_step(
         }
 
         EceState::Growing => {
-            // Nu mai face nimic aici - expansion se face cu ece_expand
             (core, ps, false)
         }
     }
 }
 
-// Kernel pentru region growing - compară un punct nevizitat cu unul deja clustered
+// kernel pentru region growing - compara un punct nevizitat cu unul deja clustered
 #[kernel]
 pub fn ece_expand(
     threshold_sq: Bits<32>,
@@ -97,13 +96,13 @@ pub fn ece_expand(
     reference_state: PointState,
 ) -> (PointState, bool) {
     
-    // Verifică dacă reference_point e în cluster-ul curent
+    // verifica daca reference_point e in cluster-ul curent
     let ref_in_cluster = match reference_state {
         PointState::Clustered(id) => id == current_cluster,
         _ => false,
     };
     
-    // Test_point trebuie să fie unvisited
+    // test_point trebuie sa fie unvisited
     let can_expand = test_point.valid 
                      && test_state == PointState::Unvisited
                      && reference_point.valid
