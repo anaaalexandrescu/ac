@@ -3,7 +3,7 @@ use rhdl::prelude::*;
 use crate::{Point3D, PointState};
 use crate::distance::distance_squared;
 
-#[derive(Copy, Clone, PartialEq, Digital)]
+#[derive(Copy, Clone, PartialEq, Digital, Debug)]
 pub enum DbscanState {
     Idle,
     CountingNeighbors,

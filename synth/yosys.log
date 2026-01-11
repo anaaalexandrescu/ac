@@ -1,0 +1,1475 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.33 (git sha1 2584903a060)
+
+
+-- Running command `read_verilog -sv synth/segmentation_step_top.v; synth_ecp5 -top segmentation_step_top -json synth/segmentation_step.json; stat' --
+
+1. Executing Verilog-2005 frontend: synth/segmentation_step_top.v
+Parsing SystemVerilog input from `synth/segmentation_step_top.v' to AST representation.
+Generating RTLIL representation for module `\segmentation_step_top'.
+Successfully finished Verilog frontend.
+
+2. Executing SYNTH_ECP5 pass.
+
+2.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/cells_sim.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/cells_sim.v' to AST representation.
+Generating RTLIL representation for module `\LUT4'.
+Generating RTLIL representation for module `\$__ABC9_LUT5'.
+Generating RTLIL representation for module `\$__ABC9_LUT6'.
+Generating RTLIL representation for module `\$__ABC9_LUT7'.
+Generating RTLIL representation for module `\L6MUX21'.
+Generating RTLIL representation for module `\CCU2C'.
+Generating RTLIL representation for module `\TRELLIS_RAM16X2'.
+Generating RTLIL representation for module `\PFUMX'.
+Generating RTLIL representation for module `\TRELLIS_DPR16X4'.
+Generating RTLIL representation for module `\DPR16X4C'.
+Generating RTLIL representation for module `\LUT2'.
+Generating RTLIL representation for module `\TRELLIS_FF'.
+Generating RTLIL representation for module `\TRELLIS_IO'.
+Generating RTLIL representation for module `\INV'.
+Generating RTLIL representation for module `\TRELLIS_COMB'.
+Generating RTLIL representation for module `\DP16KD'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Successfully finished Verilog frontend.
+
+2.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/cells_bb.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/cells_bb.v' to AST representation.
+Generating RTLIL representation for module `\MULT18X18D'.
+Generating RTLIL representation for module `\ALU54B'.
+Generating RTLIL representation for module `\EHXPLLL'.
+Generating RTLIL representation for module `\DTR'.
+Generating RTLIL representation for module `\OSCG'.
+Generating RTLIL representation for module `\USRMCLK'.
+Generating RTLIL representation for module `\JTAGG'.
+Generating RTLIL representation for module `\DELAYF'.
+Generating RTLIL representation for module `\DELAYG'.
+Generating RTLIL representation for module `\IDDRX1F'.
+Generating RTLIL representation for module `\IDDRX2F'.
+Generating RTLIL representation for module `\IDDR71B'.
+Generating RTLIL representation for module `\IDDRX2DQA'.
+Generating RTLIL representation for module `\ODDRX1F'.
+Generating RTLIL representation for module `\ODDRX2F'.
+Generating RTLIL representation for module `\ODDR71B'.
+Generating RTLIL representation for module `\OSHX2A'.
+Generating RTLIL representation for module `\ODDRX2DQA'.
+Generating RTLIL representation for module `\ODDRX2DQSB'.
+Generating RTLIL representation for module `\TSHX2DQA'.
+Generating RTLIL representation for module `\TSHX2DQSA'.
+Generating RTLIL representation for module `\DQSBUFM'.
+Generating RTLIL representation for module `\DDRDLLA'.
+Generating RTLIL representation for module `\DLLDELD'.
+Generating RTLIL representation for module `\CLKDIVF'.
+Generating RTLIL representation for module `\ECLKSYNCB'.
+Generating RTLIL representation for module `\ECLKBRIDGECS'.
+Generating RTLIL representation for module `\DCCA'.
+Generating RTLIL representation for module `\DCSC'.
+Generating RTLIL representation for module `\DCUA'.
+Generating RTLIL representation for module `\EXTREFB'.
+Generating RTLIL representation for module `\PCSCLKDIV'.
+Generating RTLIL representation for module `\PUR'.
+Generating RTLIL representation for module `\GSR'.
+Generating RTLIL representation for module `\SGSR'.
+Generating RTLIL representation for module `\PDPW16KD'.
+Successfully finished Verilog frontend.
+
+2.3. Executing HIERARCHY pass (managing design hierarchy).
+
+2.3.1. Analyzing design hierarchy..
+Top module:  \segmentation_step_top
+
+2.3.2. Analyzing design hierarchy..
+Top module:  \segmentation_step_top
+Removed 0 unused modules.
+
+2.4. Executing PROC pass (convert processes to netlists).
+
+2.4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 1 empty switch in `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:213$254'.
+Cleaned up 1 empty switch.
+
+2.4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:350$361 in module TRELLIS_FF.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:285$313 in module DPR16X4C.
+Marked 1 switch rules as full_case in process $proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:221$255 in module TRELLIS_DPR16X4.
+Removed 2 dead cases from process $proc$synth/segmentation_step_top.v:0$4 in module segmentation_step_top.
+Marked 3 switch rules as full_case in process $proc$synth/segmentation_step_top.v:0$4 in module segmentation_step_top.
+Marked 1 switch rules as full_case in process $proc$synth/segmentation_step_top.v:16$3 in module segmentation_step_top.
+Removed a total of 2 dead cases.
+
+2.4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 4 redundant assignments.
+Promoted 175 assignments to connections.
+
+2.4.4. Executing PROC_INIT pass (extract init attributes).
+Found init rule in `\TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$362'.
+  Set init value: \Q = 1'0
+
+2.4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+2.4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~8 debug messages>
+
+2.4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$362'.
+Creating decoders for process `\TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:350$361'.
+     1/1: $0\Q[0:0]
+Creating decoders for process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+Creating decoders for process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:285$313'.
+     1/3: $1$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:287$312_EN[3:0]$319
+     2/3: $1$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:287$312_DATA[3:0]$318
+     3/3: $1$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:287$312_ADDR[3:0]$317
+Creating decoders for process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+Creating decoders for process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:221$255'.
+     1/3: $1$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:223$253_EN[3:0]$261
+     2/3: $1$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:223$253_DATA[3:0]$260
+     3/3: $1$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:223$253_ADDR[3:0]$259
+Creating decoders for process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:213$254'.
+Creating decoders for process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+     1/3: $1\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r104[208:0]$137
+     2/3: $1\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r94[117:0]$136
+     3/3: $1\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$118
+Creating decoders for process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+     1/4: $0\out[208:0]
+     2/4: $0\state_reg[9:0]
+     3/4: $0\point_reg[48:0]
+     4/4: $0\core_reg[197:0]
+
+2.4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.$result' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.arg_0' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.arg_1' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.arg_2' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r0' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r1' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r2' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r3' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r4' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r5' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r6' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r7' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r8' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r9' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r10' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r11' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r12' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r13' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r14' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r15' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r16' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r18' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r20' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r21' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r22' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r23' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r24' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r25' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r26' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r27' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r28' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r29' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r30' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r31' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r32' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r33' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r34' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r35' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r36' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r37' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r38' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r39' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r40' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r41' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r42' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r43' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r44' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r45' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r46' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r47' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r48' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r49' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r50' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r52' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r53' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r54' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r55' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r56' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r57' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r58' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r59' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r60' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r61' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r62' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r63' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r64' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r65' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r66' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r67' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r68' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r69' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r70' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r71' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r72' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r73' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r74' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r75' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r76' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r77' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r78' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r79' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r80' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r81' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r82' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r83' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r84' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r85' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r86' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r87' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r88' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r89' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r91' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r93' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r94' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r95' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r96' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r97' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r98' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r99' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r100' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r101' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+No latch inferred for signal `\segmentation_step_top.\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r104' from process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+
+2.4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\TRELLIS_FF.\Q' using process `\TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:350$361'.
+  created $dff cell `$procdff$409' with positive edge clock.
+Creating register for signal `\DPR16X4C.\i' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$297_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$298_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$299_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$300_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$301_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$302_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$303_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$304_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$305_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$306_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$307_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$308_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$309_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$310_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:281$311_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:287$312_ADDR' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:285$313'.
+  created $dff cell `$procdff$410' with positive edge clock.
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:287$312_DATA' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:285$313'.
+  created $dff cell `$procdff$411' with positive edge clock.
+Creating register for signal `\DPR16X4C.$memwr$\ram$/usr/bin/../share/yosys/ecp5/cells_sim.v:287$312_EN' using process `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:285$313'.
+  created $dff cell `$procdff$412' with positive edge clock.
+Creating register for signal `\TRELLIS_DPR16X4.\i' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$237_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$238_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$239_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$240_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$241_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$242_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$243_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$244_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$245_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$246_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$247_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$248_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$249_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$250_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$251_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:207$252_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:223$253_ADDR' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:221$255'.
+  created $dff cell `$procdff$413' with positive edge clock.
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:223$253_DATA' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:221$255'.
+  created $dff cell `$procdff$414' with positive edge clock.
+Creating register for signal `\TRELLIS_DPR16X4.$memwr$\mem$/usr/bin/../share/yosys/ecp5/cells_sim.v:223$253_EN' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:221$255'.
+  created $dff cell `$procdff$415' with positive edge clock.
+Creating register for signal `\TRELLIS_DPR16X4.\muxwre' using process `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:213$254'.
+  created direct connection (no actual register cell created).
+Creating register for signal `\segmentation_step_top.\out' using process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+  created $dff cell `$procdff$416' with positive edge clock.
+Creating register for signal `\segmentation_step_top.\core_reg' using process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+  created $dff cell `$procdff$417' with positive edge clock.
+Creating register for signal `\segmentation_step_top.\point_reg' using process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+  created $dff cell `$procdff$418' with positive edge clock.
+Creating register for signal `\segmentation_step_top.\state_reg' using process `\segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+  created $dff cell `$procdff$419' with positive edge clock.
+
+2.4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+2.4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$362'.
+Found and cleaned up 2 empty switches in `\TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:350$361'.
+Removing empty process `TRELLIS_FF.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:350$361'.
+Removing empty process `DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$336'.
+Found and cleaned up 1 empty switch in `\DPR16X4C.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:285$313'.
+Removing empty process `TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:0$279'.
+Found and cleaned up 1 empty switch in `\TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:221$255'.
+Removing empty process `TRELLIS_DPR16X4.$proc$/usr/bin/../share/yosys/ecp5/cells_sim.v:213$254'.
+Found and cleaned up 3 empty switches in `\segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+Removing empty process `segmentation_step_top.$proc$synth/segmentation_step_top.v:0$4'.
+Found and cleaned up 1 empty switch in `\segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+Removing empty process `segmentation_step_top.$proc$synth/segmentation_step_top.v:16$3'.
+Cleaned up 8 empty switches.
+
+2.4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+<suppressed ~5 debug messages>
+
+2.5. Executing FLATTEN pass (flatten design).
+
+2.6. Executing TRIBUF pass.
+
+2.7. Executing DEMINOUT pass (demote inout ports to input or output).
+
+2.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 0 unused cells and 124 unused wires.
+<suppressed ~1 debug messages>
+
+2.10. Executing CHECK pass (checking for obvious problems).
+Checking module segmentation_step_top...
+Found and reported 0 problems.
+
+2.11. Executing OPT pass (performing simple optimizations).
+
+2.11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+<suppressed ~6 debug messages>
+Removed a total of 2 cells.
+
+2.11.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+      Replacing known input bits on port B of cell $procmux$386: { $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:90] \core_reg [197:91] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [89:0] \core_reg [0] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:91] \core_reg [90:0] } -> { $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:90] \core_reg [197:91] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [89:0] 1'0 $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:91] \core_reg [90:1] 1'1 }
+      Replacing known input bits on port B of cell $procmux$394: { $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 1'0 \state_reg \core_reg [90:1] } -> { $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 1'0 \state_reg \core_reg [90:42] 1'1 \core_reg [40:1] }
+      Replacing known input bits on port A of cell $ternary$synth/segmentation_step_top.v:190$117: { 1'0 \state_reg \core_reg [90:1] } -> { 1'0 \state_reg \core_reg [90:42] 1'0 \core_reg [40:1] }
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.11.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.11.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.11.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.11.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.11.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.11.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.11.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.11.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.11.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.11.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.11.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.11.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.11.16. Finished OPT passes. (There is nothing left to do.)
+
+2.12. Executing FSM pass (extract and optimize FSM).
+
+2.12.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+2.12.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+2.12.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.12.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.12.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+2.12.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+2.12.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+2.12.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+2.13. Executing OPT pass (performing simple optimizations).
+
+2.13.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.13.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.13.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+2.13.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.13.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.13.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$419 ($dff) from module segmentation_step_top (D = \state_in, Q = \state_reg, rval = 10'0000000000).
+Adding SRST signal on $procdff$418 ($dff) from module segmentation_step_top (D = \point_in, Q = \point_reg, rval = 49'0000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$417 ($dff) from module segmentation_step_top (D = \core_in, Q = \core_reg, rval = 198'000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+Adding SRST signal on $procdff$416 ($dff) from module segmentation_step_top (D = \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result, Q = \out, rval = 209'00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000).
+
+2.13.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 4 unused cells and 4 unused wires.
+<suppressed ~5 debug messages>
+
+2.13.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.13.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.13.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+2.13.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.13.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.13.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.13.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.13.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.13.16. Finished OPT passes. (There is nothing left to do.)
+
+2.14. Executing WREDUCE pass (reducing word size of cells).
+Removed top 16 bits (of 32) from port A of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:240$124 ($sub).
+Removed top 16 bits (of 32) from port B of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:240$124 ($sub).
+Removed top 15 bits (of 32) from port Y of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:240$124 ($sub).
+Removed top 16 bits (of 32) from port A of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:245$125 ($sub).
+Removed top 16 bits (of 32) from port B of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:245$125 ($sub).
+Removed top 15 bits (of 32) from port Y of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:245$125 ($sub).
+Removed top 16 bits (of 32) from port A of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:250$126 ($sub).
+Removed top 16 bits (of 32) from port B of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:250$126 ($sub).
+Removed top 15 bits (of 32) from port Y of cell segmentation_step_top.$sub$synth/segmentation_step_top.v:250$126 ($sub).
+Removed top 7 bits (of 8) from port B of cell segmentation_step_top.$add$synth/segmentation_step_top.v:264$133 ($add).
+Removed top 11 bits (of 118) from mux cell segmentation_step_top.$ternary$synth/segmentation_step_top.v:279$134 ($mux).
+Removed top 11 bits (of 118) from mux cell segmentation_step_top.$ternary$synth/segmentation_step_top.v:281$135 ($mux).
+Removed top 1 bits (of 2) from port B of cell segmentation_step_top.$procmux$392_CMP0 ($eq).
+Removed top 1 bits (of 118) from wire segmentation_step_top.$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90[117:0]$100.
+Removed top 1 bits (of 118) from wire segmentation_step_top.$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92[117:0]$102.
+
+2.15. Executing PEEPOPT pass (run peephole optimizers).
+
+2.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+2.17. Executing SHARE pass (SAT-based resource sharing).
+Found 3 cells in module segmentation_step_top that may be considered for resource sharing.
+  Analyzing resource sharing options for $mul$synth/segmentation_step_top.v:253$129 ($mul):
+    Found 1 activation_patterns using ctrl signal { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] }.
+    Found 2 candidates: $mul$synth/segmentation_step_top.v:252$128 $mul$synth/segmentation_step_top.v:251$127
+    Analyzing resource sharing with $mul$synth/segmentation_step_top.v:252$128 ($mul):
+      Found 1 activation_patterns using ctrl signal { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] }.
+      Forbidden control signals for this pair of cells: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r74[0:0]$84
+      Activation pattern for cell $mul$synth/segmentation_step_top.v:253$129: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+      Activation pattern for cell $mul$synth/segmentation_step_top.v:252$128: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+      Size of SAT problem: 0 cells, 276 variables, 564 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+    Analyzing resource sharing with $mul$synth/segmentation_step_top.v:251$127 ($mul):
+      Found 1 activation_patterns using ctrl signal { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] }.
+      Forbidden control signals for this pair of cells: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r74[0:0]$84
+      Activation pattern for cell $mul$synth/segmentation_step_top.v:253$129: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+      Activation pattern for cell $mul$synth/segmentation_step_top.v:251$127: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+      Size of SAT problem: 0 cells, 276 variables, 564 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+  Analyzing resource sharing options for $mul$synth/segmentation_step_top.v:252$128 ($mul):
+    Found 1 activation_patterns using ctrl signal { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] }.
+    Found 1 candidates: $mul$synth/segmentation_step_top.v:251$127
+    Analyzing resource sharing with $mul$synth/segmentation_step_top.v:251$127 ($mul):
+      Found 1 activation_patterns using ctrl signal { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] }.
+      Forbidden control signals for this pair of cells: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r74[0:0]$84
+      Activation pattern for cell $mul$synth/segmentation_step_top.v:252$128: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+      Activation pattern for cell $mul$synth/segmentation_step_top.v:251$127: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+      Size of SAT problem: 0 cells, 276 variables, 564 clauses
+      According to the SAT solver this pair of cells can not be shared.
+      Model from SAT solver: { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] } = 3'111
+  Analyzing resource sharing options for $mul$synth/segmentation_step_top.v:251$127 ($mul):
+    Found 1 activation_patterns using ctrl signal { $procmux$392_CMP $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r51[0:0]$61 \core_reg [0] }.
+    No candidates found.
+
+2.18. Executing TECHMAP pass (map to technology primitives).
+
+2.18.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/cmp2lut.v
+Parsing Verilog input from `/usr/bin/../share/yosys/cmp2lut.v' to AST representation.
+Generating RTLIL representation for module `\_90_lut_cmp_'.
+Successfully finished Verilog frontend.
+
+2.18.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~36 debug messages>
+
+2.19. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.20. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.21. Executing TECHMAP pass (map to technology primitives).
+
+2.21.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/mul2dsp.v
+Parsing Verilog input from `/usr/bin/../share/yosys/mul2dsp.v' to AST representation.
+Generating RTLIL representation for module `\_80_mul'.
+Generating RTLIL representation for module `\_90_soft_mul'.
+Successfully finished Verilog frontend.
+
+2.21.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/dsp_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/dsp_map.v' to AST representation.
+Generating RTLIL representation for module `\$__MUL18X18'.
+Successfully finished Verilog frontend.
+
+2.21.3. Continuing TECHMAP pass.
+Using template $paramod$a6723094dea62072dba32ab67b56b3cb58dc0d5a\_80_mul for cells of type $mul.
+Using template $paramod$30173b88fc90cba8390bd6907a9c1ee7b0ad6bec\_80_mul for cells of type $__mul.
+Using template $paramod$20c936a0792f4d1374c5655c28d1183b326ddc16\_80_mul for cells of type $__mul.
+Using template $paramod$2b87aee4ebaafa612245fc7fd7616dd6042fdae6\_80_mul for cells of type $__mul.
+Using template $paramod$dea5bd344db76a97cfc2d2ce1e3c016835e6674d\_80_mul for cells of type $__mul.
+Using template $paramod$dc95e055b97eb04e6897eea9793b8629dd692b8c\_80_mul for cells of type $__mul.
+Using template $paramod$6b575be7a871ec606b9b0767ebd93c7f3c2d2c79\_80_mul for cells of type $__mul.
+Using template $paramod$2d2a570e39348c56898214c319f101b20f7da6fb\$__MUL18X18 for cells of type $__MUL18X18.
+Using template $paramod$8966f1902fe419d84ad9f3abc17827c8390a13bf\$__MUL18X18 for cells of type $__MUL18X18.
+No more expansions possible.
+<suppressed ~654 debug messages>
+
+2.22. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module segmentation_step_top:
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:251$127.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:251$127.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:252$128.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:252$128.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:253$129.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:253$129.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:253$129.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:252$128.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429 ($add).
+  creating $macc model for $techmap$mul$synth/segmentation_step_top.v:251$127.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429 ($add).
+  creating $macc model for $add$synth/segmentation_step_top.v:254$130 ($add).
+  creating $macc model for $add$synth/segmentation_step_top.v:255$131 ($add).
+  creating $macc model for $add$synth/segmentation_step_top.v:264$133 ($add).
+  creating $macc model for $sub$synth/segmentation_step_top.v:240$124 ($sub).
+  creating $macc model for $sub$synth/segmentation_step_top.v:245$125 ($sub).
+  creating $macc model for $sub$synth/segmentation_step_top.v:250$126 ($sub).
+  merging $macc model for $add$synth/segmentation_step_top.v:254$130 into $add$synth/segmentation_step_top.v:255$131.
+  creating $alu model for $macc $sub$synth/segmentation_step_top.v:245$125.
+  creating $alu model for $macc $sub$synth/segmentation_step_top.v:240$124.
+  creating $alu model for $macc $add$synth/segmentation_step_top.v:264$133.
+  creating $alu model for $macc $sub$synth/segmentation_step_top.v:250$126.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:251$127.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:252$128.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:253$129.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:253$129.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:253$129.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:252$128.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:252$128.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:251$127.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432.
+  creating $alu model for $macc $techmap$mul$synth/segmentation_step_top.v:251$127.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435.
+  creating $macc cell for $add$synth/segmentation_step_top.v:255$131: $auto$alumacc.cc:365:replace_macc$460
+  creating $alu model for $le$synth/segmentation_step_top.v:257$132 ($le): new $alu
+  creating $alu cell for $le$synth/segmentation_step_top.v:257$132: $auto$alumacc.cc:485:replace_alu$462
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:251$127.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435: $auto$alumacc.cc:485:replace_alu$471
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:251$127.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432: $auto$alumacc.cc:485:replace_alu$474
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:252$128.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435: $auto$alumacc.cc:485:replace_alu$477
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:252$128.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432: $auto$alumacc.cc:485:replace_alu$480
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:253$129.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA.last.$add$/usr/bin/../share/yosys/mul2dsp.v:230$435: $auto$alumacc.cc:485:replace_alu$483
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:253$129.genblk1.genblk1.genblk1.genblk1.genblk1.sliceA[0].mul.$add$/usr/bin/../share/yosys/mul2dsp.v:230$432: $auto$alumacc.cc:485:replace_alu$486
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:253$129.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429: $auto$alumacc.cc:485:replace_alu$489
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:252$128.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429: $auto$alumacc.cc:485:replace_alu$492
+  creating $alu cell for $techmap$mul$synth/segmentation_step_top.v:251$127.$add$/usr/bin/../share/yosys/mul2dsp.v:173$429: $auto$alumacc.cc:485:replace_alu$495
+  creating $alu cell for $sub$synth/segmentation_step_top.v:250$126: $auto$alumacc.cc:485:replace_alu$498
+  creating $alu cell for $add$synth/segmentation_step_top.v:264$133: $auto$alumacc.cc:485:replace_alu$501
+  creating $alu cell for $sub$synth/segmentation_step_top.v:240$124: $auto$alumacc.cc:485:replace_alu$504
+  creating $alu cell for $sub$synth/segmentation_step_top.v:245$125: $auto$alumacc.cc:485:replace_alu$507
+  created 14 $alu and 1 $macc cells.
+
+2.23. Executing OPT pass (performing simple optimizations).
+
+2.23.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.23.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.23.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+2.23.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.23.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.23.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 1 unused cells and 152 unused wires.
+<suppressed ~2 debug messages>
+
+2.23.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.23.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.23.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+2.23.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.23.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.23.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.23.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.23.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.23.16. Finished OPT passes. (There is nothing left to do.)
+
+2.24. Executing MEMORY pass.
+
+2.24.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+2.24.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+2.24.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+2.24.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+2.24.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+2.24.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.24.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+2.24.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+2.24.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.24.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+2.25. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.26. Executing MEMORY_LIBMAP pass (mapping memories to cells).
+
+2.27. Executing TECHMAP pass (map to technology primitives).
+
+2.27.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/lutrams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/lutrams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__TRELLIS_DPR16X4_'.
+Successfully finished Verilog frontend.
+
+2.27.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/brams_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/brams_map.v' to AST representation.
+Generating RTLIL representation for module `\$__ECP5_DP16KD_'.
+Generating RTLIL representation for module `\$__ECP5_PDPW16KD_'.
+Successfully finished Verilog frontend.
+
+2.27.3. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~5 debug messages>
+
+2.28. Executing OPT pass (performing simple optimizations).
+
+2.28.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+<suppressed ~12 debug messages>
+
+2.28.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.28.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.28.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 3 unused cells and 3 unused wires.
+<suppressed ~4 debug messages>
+
+2.28.5. Finished fast OPT passes.
+
+2.29. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+2.30. Executing OPT pass (performing simple optimizations).
+
+2.30.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.30.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.30.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+2.30.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+    Consolidated identical input bits for $mux cell $ternary$synth/segmentation_step_top.v:190$117:
+      Old ports: A={ 1'0 \state_reg \core_reg [90:42] 1'0 \core_reg [40:1] }, B={ 3'110 \core_reg [40:33] \point_reg 1'1 \core_reg [40:1] }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27
+      New ports: A={ \state_reg \core_reg [90:42] 1'0 }, B={ 2'10 \core_reg [40:33] \point_reg 1'1 }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 [99:40]
+      New connections: { $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 [100] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 [39:0] } = { $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 [40] \core_reg [40:1] }
+    Consolidated identical input bits for $mux cell $ternary$synth/segmentation_step_top.v:230$121:
+      Old ports: A={ 1'0 \state_reg \core_reg [197:91] }, B={ 19'1010000000000000001 \point_reg 2'01 \core_reg [138:91] }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r47[117:0]$57
+      New ports: A={ 1'0 \state_reg \core_reg [197:139] }, B={ 19'1010000000000000001 \point_reg 2'01 }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r47[117:0]$57 [117:48]
+      New connections: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r47[117:0]$57 [47:0] = \core_reg [138:91]
+    Consolidated identical input bits for $mux cell $ternary$synth/segmentation_step_top.v:279$134:
+      Old ports: A=\core_reg [197:91], B={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r81[7:0]$91 \core_reg [189:91] }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90[117:0]$100 [106:0]
+      New ports: A=\core_reg [197:190], B=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r81[7:0]$91, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90[117:0]$100 [106:99]
+      New connections: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90[117:0]$100 [98:0] = \core_reg [189:91]
+  Optimizing cells in module \segmentation_step_top.
+    Consolidated identical input bits for $mux cell $procmux$394:
+      Old ports: A=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27, B={ 1'0 \state_reg \core_reg [90:42] 1'1 \core_reg [40:1] }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29
+      New ports: A={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 [40] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r17[100:0]$27 [99:40] }, B={ 1'0 \state_reg \core_reg [90:42] 1'1 }, Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:40]
+      New connections: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [39:0] = \core_reg [40:1]
+    Consolidated identical input bits for $mux cell $ternary$synth/segmentation_step_top.v:281$135:
+      Old ports: A=\core_reg [197:91], B=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90[117:0]$100 [106:0], Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92[117:0]$102 [106:0]
+      New ports: A=\core_reg [197:190], B=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r90[117:0]$100 [106:99], Y=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92[117:0]$102 [106:99]
+      New connections: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92[117:0]$102 [98:0] = \core_reg [189:91]
+  Optimizing cells in module \segmentation_step_top.
+    Consolidated identical input bits for $mux cell $procmux$386:
+      Old ports: A={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:90] \core_reg [197:91] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [89:0] 1'0 }, B={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:91] \core_reg [90:1] 1'1 }, Y=\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result
+      New ports: A={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:90] \core_reg [197:91] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [89:40] 1'0 }, B={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:91] \core_reg [90:41] 1'1 }, Y={ \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [208:41] \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [0] }
+      New connections: \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [40:1] = \core_reg [40:1]
+    Consolidated identical input bits for $pmux cell $procmux$390:
+      Old ports: A=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r47[117:0]$57, B={ 1'0 \state_reg $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92[117:0]$102 [106:0] 1'0 \state_reg \core_reg [197:91] }, Y={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:91] }
+      New ports: A=$0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r47[117:0]$57 [117:48], B={ 1'0 \state_reg $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r92[117:0]$102 [106:99] \core_reg [189:139] 1'0 \state_reg \core_reg [197:139] }, Y={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:139] }
+      New connections: $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [138:91] = \core_reg [138:91]
+  Optimizing cells in module \segmentation_step_top.
+    Consolidated identical input bits for $mux cell $procmux$386:
+      Old ports: A={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:90] \core_reg [197:91] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [89:40] 1'0 }, B={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:91] \core_reg [90:41] 1'1 }, Y={ \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [208:41] \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [0] }
+      New ports: A={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [100:90] \core_reg [197:139] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r19[100:0]$29 [89:40] 1'0 }, B={ $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r103[208:0]$113 [208:198] $0\kernel_segmentation_step$func$synth/segmentation_step_top.v:14$2.r102[197:0]$112 [197:139] \core_reg [90:41] 1'1 }, Y={ \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [208:139] \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [90:41] \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [0] }
+      New connections: \kernel_segmentation_step$func$synth/segmentation_step_top.v:14$1.$result [138:91] = \core_reg [138:91]
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 8 changes.
+
+2.30.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.30.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.30.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.30.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.30.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+2.30.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \segmentation_step_top..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~1 debug messages>
+
+2.30.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \segmentation_step_top.
+Performed a total of 0 changes.
+
+2.30.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+Removed a total of 0 cells.
+
+2.30.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.30.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.30.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.30.16. Finished OPT passes. (There is nothing left to do.)
+
+2.31. Executing TECHMAP pass (map to technology primitives).
+
+2.31.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+2.31.2. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/arith_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/arith_map.v' to AST representation.
+Generating RTLIL representation for module `\_80_ecp5_alu'.
+Successfully finished Verilog frontend.
+
+2.31.3. Continuing TECHMAP pass.
+Using template $paramod$081ba1a4a7201ecdb44563d3c3bd7013d1ebf4eb\_80_ecp5_alu for cells of type $alu.
+Using extmapper maccmap for cells of type $macc.
+  add $mul$synth/segmentation_step_top.v:251$127.Y (32 bits, unsigned)
+  add $mul$synth/segmentation_step_top.v:253$129.Y (32 bits, unsigned)
+  add $mul$synth/segmentation_step_top.v:252$128.Y (32 bits, unsigned)
+Using extmapper simplemap for cells of type $sdff.
+Using template $paramod$091610cd349a68bd5539cffd7126f0d76e9bca00\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_or.
+Using template $paramod$d7c91f8d4ce389beb1bd34b271e05fae2549a2a8\_80_ecp5_alu for cells of type $alu.
+Using template $paramod$8b91520f362def1c00b670963e6efa8b0e3adf1f\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $logic_not.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $ne.
+Using template $paramod$c3cd1564c35d873179656addd6052d7ea8b6d991\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $eq.
+Using template $paramod$cb92aa89a8218e6996d610f824b3babca5a9ef44\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$fbc7873bff55778c0b3173955b7e4bce1d9d6834\_80_ecp5_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000100000 for cells of type $fa.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $logic_and.
+Using extmapper simplemap for cells of type $xor.
+Using extmapper simplemap for cells of type $pos.
+Using extmapper simplemap for cells of type $or.
+No more expansions possible.
+<suppressed ~1080 debug messages>
+
+2.32. Executing OPT pass (performing simple optimizations).
+
+2.32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+<suppressed ~657 debug messages>
+
+2.32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\segmentation_step_top'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+2.32.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+2.32.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 1038 unused cells and 1210 unused wires.
+<suppressed ~1039 debug messages>
+
+2.32.5. Finished fast OPT passes.
+
+2.33. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+
+2.34. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+
+2.35. Executing TECHMAP pass (map to technology primitives).
+
+2.35.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `\$_ALDFF_NP_'.
+Generating RTLIL representation for module `\$_ALDFF_PP_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPP_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPP_'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Successfully finished Verilog frontend.
+
+2.35.2. Continuing TECHMAP pass.
+Using template \$_SDFF_PP0_ for cells of type $_SDFF_PP0_.
+No more expansions possible.
+<suppressed ~537 debug messages>
+
+2.36. Executing OPT_EXPR pass (perform const folding).
+Optimizing module segmentation_step_top.
+
+2.37. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+2.38. Executing LATTICE_GSR pass (implement FF init values).
+Handling GSR in segmentation_step_top.
+
+2.39. Executing ATTRMVCP pass (move or copy attributes).
+
+2.40. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \segmentation_step_top..
+Removed 0 unused cells and 2330 unused wires.
+<suppressed ~1 debug messages>
+
+2.41. Executing TECHMAP pass (map to technology primitives).
+
+2.41.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/latches_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/latches_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Successfully finished Verilog frontend.
+
+2.41.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+2.42. Executing ABC pass (technology mapping using ABC).
+
+2.42.1. Extracting gate netlist of module `\segmentation_step_top' to `<abc-temp-dir>/input.blif'..
+Extracted 972 gates and 1320 wires to a netlist network with 346 inputs and 183 outputs.
+
+2.42.1.1. Executing ABC.
+Running ABC command: "<yosys-exe-dir>/yosys-abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_lut <abc-temp-dir>/lutdefs.txt 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + dch -f 
+ABC: + if 
+ABC: + mfs2 
+ABC: + dress <abc-temp-dir>/input.blif 
+ABC: Total number of equiv classes                =     196.
+ABC: Participating nodes from both networks       =     395.
+ABC: Participating nodes from the first network   =     195. (  76.17 % of nodes)
+ABC: Participating nodes from the second network  =     200. (  78.12 % of nodes)
+ABC: Node pairs (any polarity)                    =     195. (  76.17 % of names can be moved)
+ABC: Node pairs (same polarity)                   =     185. (  72.27 % of names can be moved)
+ABC: Total runtime =     0.13 sec
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+2.42.1.2. Re-integrating ABC results.
+ABC RESULTS:              $lut cells:      255
+ABC RESULTS:        internal signals:      791
+ABC RESULTS:           input signals:      346
+ABC RESULTS:          output signals:      183
+Removing temp directory.
+Removed 0 unused cells and 568 unused wires.
+
+2.43. Executing TECHMAP pass (map to technology primitives).
+
+2.43.1. Executing Verilog-2005 frontend: /usr/bin/../share/yosys/ecp5/cells_map.v
+Parsing Verilog input from `/usr/bin/../share/yosys/ecp5/cells_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DFF_N_'.
+Generating RTLIL representation for module `\$_DFF_P_'.
+Generating RTLIL representation for module `\$_DFFE_NN_'.
+Generating RTLIL representation for module `\$_DFFE_PN_'.
+Generating RTLIL representation for module `\$_DFFE_NP_'.
+Generating RTLIL representation for module `\$_DFFE_PP_'.
+Generating RTLIL representation for module `\$_DFF_NP0_'.
+Generating RTLIL representation for module `\$_DFF_NP1_'.
+Generating RTLIL representation for module `\$_DFF_PP0_'.
+Generating RTLIL representation for module `\$_DFF_PP1_'.
+Generating RTLIL representation for module `\$_SDFF_NP0_'.
+Generating RTLIL representation for module `\$_SDFF_NP1_'.
+Generating RTLIL representation for module `\$_SDFF_PP0_'.
+Generating RTLIL representation for module `\$_SDFF_PP1_'.
+Generating RTLIL representation for module `\$_DFFE_NP0P_'.
+Generating RTLIL representation for module `\$_DFFE_NP1P_'.
+Generating RTLIL representation for module `\$_DFFE_PP0P_'.
+Generating RTLIL representation for module `\$_DFFE_PP1P_'.
+Generating RTLIL representation for module `\$_DFFE_NP0N_'.
+Generating RTLIL representation for module `\$_DFFE_NP1N_'.
+Generating RTLIL representation for module `\$_DFFE_PP0N_'.
+Generating RTLIL representation for module `\$_DFFE_PP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0P_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1P_'.
+Generating RTLIL representation for module `\$_SDFFE_NP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_NP1N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP0N_'.
+Generating RTLIL representation for module `\$_SDFFE_PP1N_'.
+Generating RTLIL representation for module `\$_ALDFF_NP_'.
+Generating RTLIL representation for module `\$_ALDFF_PP_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_NPP_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPN_'.
+Generating RTLIL representation for module `\$_ALDFFE_PPP_'.
+Generating RTLIL representation for module `\FD1P3AX'.
+Generating RTLIL representation for module `\FD1P3AY'.
+Generating RTLIL representation for module `\FD1P3BX'.
+Generating RTLIL representation for module `\FD1P3DX'.
+Generating RTLIL representation for module `\FD1P3IX'.
+Generating RTLIL representation for module `\FD1P3JX'.
+Generating RTLIL representation for module `\FD1S3AX'.
+Generating RTLIL representation for module `\FD1S3AY'.
+Generating RTLIL representation for module `\FD1S3BX'.
+Generating RTLIL representation for module `\FD1S3DX'.
+Generating RTLIL representation for module `\FD1S3IX'.
+Generating RTLIL representation for module `\FD1S3JX'.
+Generating RTLIL representation for module `\IFS1P3BX'.
+Generating RTLIL representation for module `\IFS1P3DX'.
+Generating RTLIL representation for module `\IFS1P3IX'.
+Generating RTLIL representation for module `\IFS1P3JX'.
+Generating RTLIL representation for module `\OFS1P3BX'.
+Generating RTLIL representation for module `\OFS1P3DX'.
+Generating RTLIL representation for module `\OFS1P3IX'.
+Generating RTLIL representation for module `\OFS1P3JX'.
+Generating RTLIL representation for module `\IB'.
+Generating RTLIL representation for module `\IBPU'.
+Generating RTLIL representation for module `\IBPD'.
+Generating RTLIL representation for module `\OB'.
+Generating RTLIL representation for module `\OBZ'.
+Generating RTLIL representation for module `\OBZPU'.
+Generating RTLIL representation for module `\OBZPD'.
+Generating RTLIL representation for module `\OBCO'.
+Generating RTLIL representation for module `\BB'.
+Generating RTLIL representation for module `\BBPU'.
+Generating RTLIL representation for module `\BBPD'.
+Generating RTLIL representation for module `\ILVDS'.
+Generating RTLIL representation for module `\OLVDS'.
+Generating RTLIL representation for module `\$lut'.
+Successfully finished Verilog frontend.
+
+2.43.2. Continuing TECHMAP pass.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010110 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11101000 for cells of type $lut.
+Using template $paramod$658b9ed803f0d3d335616d3858b53e0a2522f1e8\$lut for cells of type $lut.
+Using template $paramod$9bdc414229f06e785dc8fd97a243faa9336e164a\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'00010000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1110 for cells of type $lut.
+Using template $paramod$df196ed0a1da5c4a58c5e08a1dac304fd3fccaab\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'11111000 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0100 for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1000 for cells of type $lut.
+Using template $paramod$4f2ff369e573efd7ef2034d2c1f6c1a1cc73b2b7\$lut for cells of type $lut.
+Using template $paramod$f44e1eab45e047e709d5dfed32527eb1f7745488\$lut for cells of type $lut.
+Using template $paramod$2d07c1a6c53c7b878509360922c4fa5ebedc3011\$lut for cells of type $lut.
+Using template $paramod$43779580bfffd5d5a9f321249a174febf1dac288\$lut for cells of type $lut.
+Using template $paramod$251994398653c4cf8de320f1e306e535d5d2d624\$lut for cells of type $lut.
+Using template $paramod$e0540a1bf97ac201103c9db640a6163eecdbe4a0\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'1001 for cells of type $lut.
+Using template $paramod$525425bfbe66d72ee88210d059d9a74f55ab8de8\$lut for cells of type $lut.
+Using template $paramod$33e58adf67c6b686a154c9ce8ebbc4b04b8cabc5\$lut for cells of type $lut.
+Using template $paramod$ba05b8a1a425003df083aea0e69541f5cbdc68f2\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000010\LUT=4'0110 for cells of type $lut.
+Using template $paramod$8b09f347504cfc0d3d65fbb4601497936543b1b3\$lut for cells of type $lut.
+Using template $paramod$1a6ea9151e749fe94446f4fb089a0baf2adde081\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10010000 for cells of type $lut.
+Using template $paramod$2382b0dd4cb27fd4312681c40a6dd179c2a7a26a\$lut for cells of type $lut.
+Using template $paramod$fa4f9b366e9253c4a2a22fe16973aa8a9118e5d1\$lut for cells of type $lut.
+Using template $paramod$f265d66c738a4a3465ae09d2d57102346efdf962\$lut for cells of type $lut.
+Using template $paramod\$lut\WIDTH=32'00000000000000000000000000000011\LUT=8'10101100 for cells of type $lut.
+Using template $paramod$2aafdb312f80701f405114369195d9a506c3a01d\$lut for cells of type $lut.
+Using template $paramod$6b0849254d6c87461fb93e37cc18f089f61eb912\$lut for cells of type $lut.
+Using template $paramod$d4fae2c0d9ad2966369cd4e39b81c71bcd1327c9\$lut for cells of type $lut.
+No more expansions possible.
+<suppressed ~730 debug messages>
+
+2.44. Executing OPT_LUT_INS pass (discard unused LUT inputs).
+Optimizing LUTs in segmentation_step_top.
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4914.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 2)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut7 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4910.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4915.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4915.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4916.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4913.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4917.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4918.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 3)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4853.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4866.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4879.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4879.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4885.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4886.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4886.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4887.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4896.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4896.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4900.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut6 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4895.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut3 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut4 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4892.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut5 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4893.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4893.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4906.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4908.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut2 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4740.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4910.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4844.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 2)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4845.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4853.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4846.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4859.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4861.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4866.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4867.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4868.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4874.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4882.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4887.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4885.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4895.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4896.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4900.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4888.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4903.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4906.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4908.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4910.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4913.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4914.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4915.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4916.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4917.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4918.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut0 (4 -> 0)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4914.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4916.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4913.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4918.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+  Optimizing lut $abc$4737$auto$blifparse.cc:525:parse_blif$4917.genblk1.genblk1.genblk1.genblk1.genblk1.genblk1.lut1 (4 -> 1)
+Removed 0 unused cells and 558 unused wires.
+
+2.45. Executing AUTONAME pass.
+Renamed 8413 objects in module segmentation_step_top (66 iterations).
+<suppressed ~1356 debug messages>
+
+2.46. Executing HIERARCHY pass (managing design hierarchy).
+
+2.46.1. Analyzing design hierarchy..
+Top module:  \segmentation_step_top
+
+2.46.2. Analyzing design hierarchy..
+Top module:  \segmentation_step_top
+Removed 0 unused modules.
+
+2.47. Printing statistics.
+
+=== segmentation_step_top ===
+
+   Number of wires:                424
+   Number of wire bits:          10199
+   Number of public wires:         424
+   Number of public wire bits:   10199
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1051
+     CCU2C                         105
+     L6MUX21                        38
+     LUT4                          363
+     MULT18X18D                      9
+     PFUMX                          70
+     TRELLIS_FF                    466
+
+2.48. Executing CHECK pass (checking for obvious problems).
+Checking module segmentation_step_top...
+Found and reported 0 problems.
+
+2.49. Executing JSON backend.
+
+3. Printing statistics.
+
+=== segmentation_step_top ===
+
+   Number of wires:                424
+   Number of wire bits:          10199
+   Number of public wires:         424
+   Number of public wire bits:   10199
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1051
+     CCU2C                         105
+     L6MUX21                        38
+     LUT4                          363
+     MULT18X18D                      9
+     PFUMX                          70
+     TRELLIS_FF                    466
+
+End of script. Logfile hash: f34baf55b9, CPU: user 9.15s system 1.04s, MEM: 38.71 MB peak
+Yosys 0.33 (git sha1 2584903a060)
+Time spent: 15% 15x read_verilog (1 sec), 15% 19x opt_clean (1 sec), ...
